@@ -44,6 +44,63 @@ def sum_of_num(number):
         sum += i
     print("Sum: ", sum)
 
+def decToBinary(dec):
+    flag = 0
+    while dec != 0:
+        digit = int(dec % 2)
+        dec //= 2
+        if flag == 0:
+            binary = digit
+        else:
+            binary = str(digit) + str(binary)
+        flag = 1
+
+    print("Binary: ", binary)
+
+def decToOctal(dec):
+    flag = 0
+    while dec != 0:
+        digit = int(dec % 8)
+        dec //= 8
+        if flag == 0:
+            octal = digit
+        else:
+            octal = str(digit) + str(octal)
+        flag = 1
+
+    print("Octal: ", octal)
+
+def decToHex(dec):
+    flag = 0
+    while dec != 0:
+        digit = int(dec % 16)
+        dec //= 16
+        if digit == 10:
+            digit = "A"
+        elif digit == 11:
+            digit = "B"
+        elif digit == 12:
+            digit = "C"
+        elif digit == 13:
+            digit = "D"
+        elif digit == 14:
+            digit = "E"
+        elif digit == 15:
+            digit = "F"
+
+        if flag == 0:
+            hex = digit
+        else:
+            hex = str(digit) + str(hex)
+        flag = 1
+
+    print("Hexadecimal: ", hex)
+
+
+def main():
+    decToBinary(10)
+    decToOctal(10)
+    decToHex(10)
 
 
 # Press the green button in the gutter to run the script.
@@ -63,7 +120,7 @@ if __name__ == '__main__':
     '''number = int(input("Enter number: "))
     sum_of_num(number)'''
     # Number 5
-
+    main()
 
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
